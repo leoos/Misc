@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# This first part is Rich Trouton's Command Line Tools install script in its entirety
 # Installing the Xcode command line tools on 10.7.x or higher
 
 osx_vers=$(sw_vers -productVersion | awk -F "." '{print $2}')
@@ -61,6 +62,8 @@ if [[ "$osx_vers" -eq 7 ]] || [[ "$osx_vers" -eq 8 ]]; then
 		rm -rf "$TMPMOUNT"
 		rm "$TOOLS"
 fi
+
+# This second part is taken from Tom Bridge's Munki in a Box Script
 
 ####
 # Get AutoPkg
