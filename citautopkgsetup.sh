@@ -79,10 +79,15 @@ curl -L "${AUTOPKG_LATEST}" -o autopkg-latest1.pkg
 
 sudo installer -pkg autopkg-latest1.pkg -target /
 
-${LOGGER} "AutoPkg Installed"
 echo "AutoPkg Installed"
 
 # This third part adds jss importer and is also borrowing from Munki in a Box
+
+autopkg repo-add http://github.com/autopkg/recipes.git
+autopkg repo-add rtrouton-recipes
+autopkg repo-add jleggat-recipes
+autopkg repo-add nmcspadden-recipes
+autopkg repo-add jessepeterson-recipes
 
 git clone https://github.com/sheagcraig/JSSImporter.git
 cp JSSImporter/JSSImporter.py /Library/AutoPkg/autopkglib
