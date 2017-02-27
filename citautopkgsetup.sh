@@ -82,6 +82,14 @@ sudo installer -pkg autopkg-latest1.pkg -target /
 ${LOGGER} "AutoPkg Installed"
 echo "AutoPkg Installed"
 
+# This third part adds jss importer and is also borrowing from Munki in a Box
+
+git clone https://github.com/sheagcraig/JSSImporter.git
+cp JSSImporter/JSSImporter.py /Library/AutoPkg/autopkglib
+
+
+echo "AutoPkg Configured"
+
 
 
 exit 0
